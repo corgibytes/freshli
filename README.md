@@ -4,7 +4,7 @@ Freshli is tool for collecting historical metrics about a project's dependencies
 
 You can use Freshli in a number of ways:
 
-|    |    |
+| Type | Description |
 |--------------------|-----------------------|
 | [Website](https://freshli.io/) | Produce graphes of your project's dependencies |
 | [Command Line (CLI)](https://github.com/corgibytes/freshli-cli) | Get the raw dependency data of you project.  Can also be used in you automated build process |
@@ -13,12 +13,12 @@ You can use Freshli in a number of ways:
 ## Questions?  Spot a Bug?
 If you have any general questions about Freshli or spot an issue with the [Website] please open [issue](https://github.com/corgibytes/freshli/issues).  
 
-If you have questions about Freshli Command Line or Library please enter them in the approiate repository.  We are also accepting pull requests these open source projects.
+If you have questions about Freshli Command Line or Library please enter them in the approiate repository.  We are also accepting pull requests for these open source projects.
 
 ### CLI
 - [Issues](https://github.com/corgibytes/freshli-cli/issues)
-- [Pull Requests](https://github.com/corgibytes/freshli-lib/pulls)
+- [Pull Requests](https://github.com/corgibytes/freshli-cli/pulls)
 
 ### Library (NuGet)
 - [Issues](https://github.com/corgibytes/freshli-lib/issues)
-- [Pull Requests]()
+- [Pull Requests](https://github.com/corgibytes/freshli-lib/pulls)

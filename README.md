@@ -11,7 +11,7 @@ You can use Freshli in a number of ways:
 | [NuGet Package](https://www.nuget.org/packages/Corgibytes.Freshli.Lib/) | Create your own application using Freshli |
 
 ## Questions?  Spot a Bug?
-If you have any general questions about Freshli or spot an issue with the [Website] please open [issue](https://github.com/corgibytes/freshli/issues).  
+If you have any general questions about Freshli or spot an issue with the Freshli [website](https://freshli.io/) please open an [issue](https://github.com/corgibytes/freshli/issues).  
 
 If you have questions about Freshli Command Line or Library please enter them in the approiate repository.  We are also accepting pull requests for these open source projects.
 

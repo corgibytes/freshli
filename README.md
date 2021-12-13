@@ -6,8 +6,8 @@ You can use Freshli in a number of ways:
 
 | Type | Description |
 |--------------------|-----------------------|
-| [Website](https://freshli.app/) | Freshli homepage |
-| [Website](https://freshli.io /) | Website that produce graphes of your project's dependencies |
+| [Homepage](https://freshli.app/) | Freshli homepage |
+| [Website App](https://freshli.io/) | Website that produce graphes of open source project's dependencies |
 | [Command Line (CLI)](https://github.com/corgibytes/freshli-cli) | Get the raw dependency data of you project.  Can also be used in you automated build process |
 | [NuGet Package](https://www.nuget.org/packages/Corgibytes.Freshli.Lib/) | Create your own application using Freshli |
 

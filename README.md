@@ -1,4 +1,4 @@
-![Freshli Logo](docs/logo-banner.png)
+![Freshli Logo](logo-banner.png)
 
 # Freshli
 

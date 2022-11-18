@@ -9,8 +9,7 @@ You can use Freshli in a number of ways:
 | [Homepage](https://freshli.app/) | Freshli marketing website |
 | [Website App](https://freshli.io/) | Website that displays analysis reports. Provides a publication API to the CLI application. This is a closed source project, and access to reports will eventually be monetized. |
 | [Command Line (CLI)](https://github.com/corgibytes/freshli-cli) | Analyze a local project. Results are viewable via the [Website App](https://freshli.io). |
-| [Command Line Java Language Agent](https://github.com/corgibytes/freshli-agent-java) | Language-specific agent program that knows how to process dependencies from the Java ecosystem
-|
+| [Command Line Java Language Agent](https://github.com/corgibytes/freshli-agent-java) | Language-specific agent program that knows how to process dependencies from the Java ecosystem |
 
 ## Questions?  Spot a Bug?
 If you have any general questions about Freshli or spot an issue with the Freshli [website](https://freshli.io/), please open an [issue](https://github.com/corgibytes/freshli/issues).  

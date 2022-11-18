@@ -1,3 +1,5 @@
+![Freshli Logo](docs/logo-banner.png)
+
 # Freshli
 
 Freshli is a tool for collecting historical metrics about a project's dependencies. View graphs about how your projects' dependency freshness has changed over time.

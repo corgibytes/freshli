@@ -12,6 +12,8 @@ You can use Freshli in a number of ways:
 | [Website App](https://freshli.io/) | Website that displays analysis reports. Provides a publication API to the CLI application. This is a closed source project, and access to reports will eventually be monetized. |
 | [Command Line (CLI)](https://github.com/corgibytes/freshli-cli) | Analyze a local project. Results are viewable via the [Website App](https://freshli.io). |
 | [Command Line Java Language Agent](https://github.com/corgibytes/freshli-agent-java) | Language-specific agent program that knows how to process dependencies from the Java ecosystem |
+| [Command Line DotNet Language Agent](https://github.com/corgibytes/freshli-agent-dotnet) (in progress) | Language-specific agent program that knows how to process dependencies from the .NET ecosystem |
+| [Command Line Python Language Agent](https://github.com/corgibytes/freshli-agent-python) (in progress) | Language-specific agent program that knows how to process dependencies from the Python ecosystem |
 
 
 ## Related Projects

@@ -1,0 +1,45 @@
+C4Container
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+
+    title Container diagram for Freshli - Current Architecture
+
+    Person(customer, Customer, "A customer wanting to conduct analysis of a Git repository")
+
+    Container_Boundary(c1, "Freshli System") {
+        Container_Ext(cli, "Freshli-CLI", "C#", "Performs analysis of repositories in concert with language agents")
+        Container(web, "Freshli-Web as UI", "ASP.NET, C#, Docker Container", "Provides form to start an analysis, and ability to view data for an existing analysis")
+        Container_Ext(java_agent_cli, "Java Language Agent", "Kotlin", "Responsible for Java ecosystem analysis")
+        Container_Ext(dotnet_agent_cli, ".NET Language Agent", "C#", "Responsible for .NET ecosystem analysis")
+        Container(worker, "Freshli-Web as Worker", "ASP.NET, Hangfire, C#, Docker Container", "Performs analysis in response to request from UI")
+        ContainerDb(database, "Database", "PostgreSQL Database", "Stores all analysis data")
+    }
+
+    Container_Boundary(c2, "External Services") {
+        System_Ext(email, "E-Mail System", "Sendgrid")
+        System_Ext(git, "Git Repository", "git url")
+    }
+
+    Rel(customer, web, "Uses", "Requests Analysis of Public Git Repository, and Views Analysis Results")
+    UpdateRelStyle(customer, web, $offsetX="-120", $offsetY="-60")
+    Rel(customer, cli, "Uses", "Analyzes local Git Repository - public or private")
+    UpdateRelStyle(customer, cli, $offsetX="-260", $offsetY="-60")
+    
+    Rel(web, worker, "Triggers analysis job for public Git Repository")
+    UpdateRelStyle(web, worker, $offsetY="-80")
+    Rel(web, database, "Stores analysis request and Retrieves data from graphing")
+
+    Rel(worker, email, "Send analysis progress emails - started and completed")
+    UpdateRelStyle(worker, email, $offsetX="-200", $offsetY="-50")
+    Rel(worker, database, "Stores analysis data")
+    UpdateRelStyle(worker, database, $offsetX="-50", $offsetY="-20")
+    Rel(worker, git, "Mines repository for information")
+    UpdateRelStyle(worker, git, $offsetX="-120")
+    
+    Rel_Down(cli, git, "Mines repository for information")
+    UpdateRelStyle(cli, git, $offsetY="150")
+    Rel_Down(cli, java_agent_cli, "Requests Java specific data")
+    UpdateRelStyle(cli, java_agent_cli, $offsetX="-150")
+    Rel_Down(cli, dotnet_agent_cli, "Requests .NET specific data")
+    Rel_Down(cli, web, "Sends analysis data via API endpoints")
+    UpdateRelStyle(cli, web, $offsetX="-50", $offsetY="30")
+    

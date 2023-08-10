@@ -1,0 +1,49 @@
+C4Container
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="2")
+
+    title Container diagram for Freshli Current Architecture
+
+    Person(customer, Customer, "A customer wanting to conduct analysis of a Git repository")
+
+    Container_Ext(auth, "auth.freshli.io", "Auth0", "Provides user/password login, social logins[Github, Google, Microsoft, etc], and MFA")
+    UpdateElementStyle(auth, $bgColor="#F5CB5C")
+
+    Container_Boundary(c1, "Freshli System") {
+        Container_Ext(cli, "Freshli-CLI", "C#", "Performs analysis of repositories in concert with language agents")
+        UpdateElementStyle(cli, $bgColor="#13C4A3")
+        Container(ui, "freshli.io", "Next.js, Typescript, Docker Container", "Provides analytics visualizations and account management")
+        Container_Ext(java_agent_cli, "Java Language Agent", "Kotlin", "Responsible for Java ecosystem analysis")
+        UpdateElementStyle(java_agent_cli, $bgColor="#E6AACE")
+        Container_Ext(dotnet_agent_cli, ".NET Language Agent", "C#", "Responsible for .NET ecosystem analysis")
+        UpdateElementStyle(dotnet_agent_cli, $bgColor="#E6AACE")
+        Container(api, "api.freshli.io", "ASP.NET, C#, Docker Container", "Provides API for use by CLI and UI")
+    }
+
+    Container_Boundary(c2, "External Services") {
+        System_Ext(git, "Git Repository", "git url")
+        UpdateElementStyle(git, $bgColor="#F5CB5C")
+        ContainerDb(database, "Database", "MongoDB", "Stores all analysis data and some account data")
+        UpdateElementStyle(database, $bgColor="#F5CB5C")
+    }
+
+    Rel(customer, ui, "Uses", "Views Analysis Results and manages account")
+    UpdateRelStyle(customer, ui, $offsetX="-200", $offsetY="-60")
+    Rel(customer, cli, "Uses", "Analyzes local Git Repository - public or private")
+    UpdateRelStyle(customer, cli, $offsetX="-260", $offsetY="-60")
+    Rel(customer, auth, "Authenticates", "Redirected here on sign up and login")
+    UpdateRelStyle(customer, auth, $offsetX="-60", $offsetY="10")
+
+    Rel(ui, auth, "Queries for API JWT token")
+    Rel(ui, api, "Queries for analysis data and account information")
+    UpdateRelStyle(ui, api, $offsetX="220", $offsetY="-130")
+    
+    Rel(api, database, "Stores analysis data and formats it for graphing")
+
+    Rel(cli, git, "Mines repository for information")
+    UpdateRelStyle(cli, git, $offsetX="180")
+    Rel_Down(cli, java_agent_cli, "Requests Java specific data")
+    UpdateRelStyle(cli, java_agent_cli, $offsetX="-150")
+    Rel_Down(cli, dotnet_agent_cli, "Requests .NET specific data")
+    Rel_Down(cli, api, "Sends analysis data")
+    UpdateRelStyle(cli, api, $offsetX="-50", $offsetY="100")
+    
